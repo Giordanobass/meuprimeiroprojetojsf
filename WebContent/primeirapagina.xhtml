@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Olá Jsf</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="formPessoa">
+
+		<h1>Olá JSF</h1>
+
+		<h:outputLabel value="Id: " />
+		<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
+
+		<br />
+		<h:outputLabel value="Nome:" />
+		<h:inputText value="#{pessoaBean.pessoa.nome}" />
+
+		<br />
+		<h:outputLabel value="Sobrenome:" />
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
+
+		<br />
+		<h:outputLabel value="Idade: " />
+		<h:inputText value="#{pessoaBean.pessoa.idade}" />
+
+		<br />
+		<h:commandButton value="Novo" action="#{pessoaBean.novo}" />
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+
+		<h:commandButton value="Deletar" action="#{pessoaBean.remove}" />
+
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+			<h:column>
+				<h:outputText value="#{pessoa.id}" />
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.nome}" />
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.sobrenome}" />
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.idade}" />
+			</h:column>
+		</h:dataTable>
+
+	</h:form>
+
+</h:body>
+
+</html>
